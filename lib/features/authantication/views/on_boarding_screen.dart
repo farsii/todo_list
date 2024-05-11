@@ -20,7 +20,7 @@ class OnboardingScreen extends StatelessWidget {
               children: [
                  
                  Image.asset(Imageres.todo),
-                 WhiteSpace(height: 100),
+                 WhiteSpace(height: 30),
                
                 Text("Todolist App",
                 style: TextStyle(
@@ -30,7 +30,40 @@ class OnboardingScreen extends StatelessWidget {
                 ),
                 WhiteSpace(height: 10),
                 Text("WELCOME TO OUR APP"),
-                
+                Container(
+                  
+                  child: 
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    
+                    children: [                   
+                      Row(                        
+                        children: [
+                          //icon and skip 
+                          //                          
+                          IconButton(
+                            iconSize: 30,
+                            onPressed: (){}, 
+                          icon: Icon(Icons.next_plan_rounded),color: Colors.blue,),
+                          WhiteSpace(width: 5,),
+                         Text("SKIP",style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500, 
+                        ),),
+                      
+
+                        ],
+                        
+
+                      ),
+                      //dot tow button
+                      Placeholder(fallbackHeight: 20,fallbackWidth: 20,),
+                      
+                        ],
+                      
+                    
+                  ),
+                ),
               ],
             ),
           ),
