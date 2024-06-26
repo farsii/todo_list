@@ -17,7 +17,7 @@ class FadingText extends StatelessWidget {
       overflow: TextOverflow.fade,
       style: TextStyle(
         fontSize: fontsize,
-        color: color,
+        color: Colors.white,
       ),
 
     );

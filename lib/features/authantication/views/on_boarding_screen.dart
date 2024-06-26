@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/core/common/widgets/white_space.dart';
 import 'package:myapp/core/res/image_res.dart';
+import 'package:myapp/features/authantication/views/widgets/first_page.dart';
+import 'package:myapp/features/authantication/views/widgets/second_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
@@ -21,7 +23,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 223, 221, 221),
+        backgroundColor: Color.fromARGB(255, 39, 39, 39),
         body: 
         SafeArea(
           child: Stack(
@@ -33,49 +35,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               controller: pageController,
               children: [
             
-               Padding(
-                padding: const EdgeInsets.symmetric(horizontal:30),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Spacer(),
-                     Image.asset(Imageres.todo),
-                     const WhiteSpace(height: 50),
-                  
-                   
-                     const Text("Todolist App",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w500, 
-                    ),
-                    ),
-                    const WhiteSpace(height: 10),
-                    const Text("WELCOME TO OUR APP"),
-                    Spacer(),
-                     ],
-                ),
-                
-              ),
+               FirstPage(),
               //2nd onboarding page
-              Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Spacer(),
-                     Image.asset(Imageres.todo),
-                     const WhiteSpace(height: 50),
-                  
-                   
-                     const Text("Todolist App",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w500, 
-                    ),
-                    ),
-                    const WhiteSpace(height: 10),
-                    const Text("WELCOME TO OUR APP"),
-                    Spacer(),
-                     ],
-                ),
+              SecondPage(),
               
                     
                   ],
@@ -85,7 +47,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                    //skip buttons
                     Padding
                     (
-                      padding: EdgeInsets.symmetric(horizontal: 10,),
+                      padding: EdgeInsets.symmetric(horizontal: 20,),
                       child: Row(
                         
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -105,6 +67,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               const WhiteSpace(width: 2,),
                              const Text("SKIP",style: TextStyle(
                               fontSize: 20,
+                              color: Colors.white,
                               fontWeight: FontWeight.w500, 
                             ),),                   
                           
