@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/core/common/widgets/white_space.dart';
-import 'package:myapp/core/res/image_res.dart';
 import 'package:myapp/features/authantication/views/widgets/first_page.dart';
 import 'package:myapp/features/authantication/views/widgets/second_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -47,36 +46,50 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                    //skip buttons
                     Padding
                     (
-                      padding: EdgeInsets.symmetric(horizontal: 20,),
+                      padding: EdgeInsets.symmetric(horizontal: 20,).copyWith(bottom: 10),
                       child: Row(
                         
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         
                         children: [
-                          
-                          Row(        
-                                            
-                            children: [
-                               
-                              //icon and skip 
-                              //                          
-                              IconButton(
-                                iconSize: 30,
-                                onPressed: (){}, 
-                              icon: const Icon(Icons.arrow_forward_ios_outlined),color: Colors.blue,),
-                              const WhiteSpace(width: 2,),
-                             const Text("SKIP",style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500, 
-                            ),),                   
-                          
-                            ],
-                            
+                          GestureDetector(
+                            behavior: HitTestBehavior.opaque,
+                            onTap: (){
+                              pageController.nextPage(
+                                duration: Duration(milliseconds: 500), curve: Curves.easeIn,
+                              );
+                            },
+                            child:
+                              const Row(        
+                                                
+                                children: [
+                                   
+                                  //icon and skip 
+                                  //                          
+                                   Icon(Icons.arrow_circle_right,size: 30, color: Colors.white,),
+
+                                  const WhiteSpace(width: 2,),
+                                 const Text("SKIP",style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500, 
+                                ),
+                                ),                   
+                              
+                                ],
+                                
+                              ),
                           ),
-                          SmoothPageIndicator(controller: pageController, count: 2,),
+                              //swip indicator
+                               SmoothPageIndicator(
+                                controller: pageController,
+                                 count: 2,),
+                             
+                            
+                          
                         ],
                       ),
+                      
                     ),
                     
                  

@@ -24,7 +24,7 @@ class FirstPage extends StatelessWidget {
                     ),
                     ),
                     const WhiteSpace(height: 10),
-                    const Text("WELCOME TO OUR APP",
+                    const Text("WELCOME TO THE APP",
                     style: TextStyle(
                       color: Colors.white,
                     ),),

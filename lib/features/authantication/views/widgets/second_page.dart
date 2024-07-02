@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/core/common/widgets/round_button.dart';
 import 'package:myapp/core/common/widgets/white_space.dart';
 import 'package:myapp/core/res/image_res.dart';
+import 'package:myapp/features/authantication/views/sign_in_screen.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
@@ -15,22 +17,12 @@ class SecondPage extends StatelessWidget {
                   children: [                 
                      Image.asset(Imageres.notification),
                       WhiteSpace(height: 50),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-
-                        ),
-                        onPressed: (){}, 
-                      
-                      child: Text(
-                        "Login with Phone",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: const Color.fromARGB(255, 0, 0, 0),
-                          fontWeight: FontWeight.w500, 
-                        ),
-
-                      ),
-                      ),
+                      RoundButton(text: "Login with Phone",
+                      onpressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignInScreen(),
+                        ));
+                        
+                      },)
                      ],
                 ),
                 
