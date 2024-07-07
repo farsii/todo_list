@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/core/common/widgets/round_button.dart';
 import 'package:myapp/core/common/widgets/white_space.dart';
 import 'package:myapp/core/res/image_res.dart';
+import 'package:myapp/features/authantication/views/otp_verify_screen.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -26,11 +28,12 @@ class SignInScreen extends StatelessWidget {
             ),
             WhiteSpace(height: 20,),
             TextField(
+              keyboardType: TextInputType.phone,
               
               style: TextStyle(
                 
                 fontSize: 20,
-                color: Colors.white,
+                color: Color.fromARGB(255, 0, 0, 0),
                 fontWeight: FontWeight.w500,
               ),
               decoration: InputDecoration(
@@ -49,6 +52,11 @@ class SignInScreen extends StatelessWidget {
                 ),
               ),
             ),
+            WhiteSpace(height: 30,),
+            RoundButton(text: "Send Code", onpressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => OtpVerifyScreen(),));
+              
+            },)
 
 
 
